@@ -57,6 +57,7 @@ function displayQuizz(quizzIndex){
     const currentQuestion = dataQuizz[quizzIndex];
 
     console.log(currentQuestion);
+ 
 
     // Display the current question n° on the page  (you can use the quizzIndex);
 
@@ -79,6 +80,8 @@ function displayQuizz(quizzIndex){
 
 
       // In every button insert the choice text
+
+      console.log((dataQuizz[0].answers));
 
 }
 
@@ -106,7 +109,12 @@ console.log(displayQuizz());
 
 
 
-// when there is no more questions display the result.
+// when there is no more questions display the result. <
+
+function gameOver(){
+    dataQuizz.length >= 5
+};
+
 
 // At the end display the nunmber of correct answers
 // count the number of correct answer.
