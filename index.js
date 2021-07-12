@@ -1,5 +1,7 @@
-const main = document.getElementsByClassName("main")
-const number =[1, 2, 3, 4, 5]
+const btn = document.querySelectorAll(".btn-choice")
+const quizzIndex = 0;
+
+
 const dataQuizz = [
     {
      question : "In what food Rick transform himself to escape the family therapy session ?",
@@ -32,14 +34,9 @@ const dataQuizz = [
 
 
 
-function data (main){
-    function displayQuest(){
-        
-    }
-}
 
-
-
+// Display numbers of questions
+//  Each time a btn is clicked display the number inside the array until the end of that array.
 
 
 
@@ -53,10 +50,52 @@ function data (main){
 
 // Questions, answers, result are linked, since they are linked questions and object should be in the same array
 
-// Display the questions.
-// each questions will be already write.
-// they will be inside an object,
-// each time a btn is clicked the questions should appear on the paragraph
+
+function displayQuizz(quizzIndex){
+
+
+    const currentQuestion = dataQuizz[quizzIndex];
+
+    console.log(currentQuestion);
+
+    // Display the current question n° on the page  (you can use the quizzIndex);
+
+     const title = document.getElementById("current-quest");
+
+
+      title.textContent += 1;
+    
+    console.log(title);
+
+
+    // Display the question on the page
+
+     console.log(dataQuizz[0].question);
+     const quest = document.querySelector(".questions");
+
+     quest.innerHTML = dataQuizz[0].question;
+
+     console.log(quest);
+
+
+      // In every button insert the choice text
+
+}
+
+
+console.log(displayQuizz());
+
+    // each questions will be already write.
+    // they will be inside an object,
+    // each time a btn is clicked the questions should appear on the paragraph
+
+// Select every button, for every button attach an event handler that will look
+// if the current button is the correct answer.
+
+
+
+//displayQuizz(quizzIndex)
+
 
 // Display answers
 // I would have an object with answers inside.
@@ -66,11 +105,6 @@ function data (main){
 // I need to select what's inside class main in order to input the values of my variables.
 
 
-// Display number of questions left
-// I should have an array of numbers.
-// each time a btn is clicked the number should appear on class=questions and display "Question [1] out 5"
-// 
-//
 
 // when there is no more questions display the result.
 
@@ -84,9 +118,4 @@ function data (main){
 //
 //
 //
-// each time a button is clicked it should display a new array of data. 
-
-
-
-
-
+// each time a button is clicked it should display a new array of data
