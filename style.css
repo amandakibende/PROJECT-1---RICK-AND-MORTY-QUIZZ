@@ -4,11 +4,34 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-align: center;
+   
 }
 
 body{
     font-family: 'Contrail One', cursive;
-    text-align: center;
+    font-size: 30px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+body > .main {
+    justify-self: center;
+    align-self: center;
 }
 
 
+.btn-choice{
+ margin: 50px;
+  padding: 40px 150px;
+  border: 4px solid black;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  background-color: white;
+}
+
+.btn-choice:hover{
+    color: #FFFFFF;
+    background-color: #000000;
+   }
