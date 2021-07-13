@@ -8,7 +8,6 @@ const dataQuizz = [
      answers : ["Carrot", "Apple", "Pickle"],
      result : 2
 },
-    
     {
     question : "How many grand kids Rick have ?", 
      answers : [3, 4, 2],
@@ -34,10 +33,8 @@ const dataQuizz = [
 
 
 
-
 // Display numbers of questions
 //  Each time a btn is clicked display the number inside the array until the end of that array.
-
 
 
 
@@ -53,11 +50,10 @@ const dataQuizz = [
 
 function displayQuizz(quizzIndex){
 
-
+  
     const currentQuestion = dataQuizz[quizzIndex];
 
     console.log(currentQuestion);
- 
 
     // Display the current question n° on the page  (you can use the quizzIndex);
 
@@ -66,8 +62,7 @@ function displayQuizz(quizzIndex){
 
       title.textContent += 1;
     
-    console.log(title);
-
+    //   console.log(title);
 
     // Display the question on the page
 
@@ -76,26 +71,103 @@ function displayQuizz(quizzIndex){
 
      quest.innerHTML = dataQuizz[0].question;
 
-     console.log(quest);
+    //  console.log(quest);
 
 
-      // In every button insert the choice text
+     // In every button insert the choice text
 
-      console.log((dataQuizz[0].answers));
+    //   console.log((dataQuizz[i].answers));
+
+      const btnChoice = document.querySelectorAll(".btn-choice")
+        
+       console.log((dataQuizz[0].answers));
+
+    for (let i = 0; i < dataQuizz[i].answers.length; index++) {
+
+    const element = dataQuizz[i].answers.length;
+    
+}
+
+      response.forEach((answer) =>{
+       
+              // selection a dom element with class.btn-main
+      const  divBtn =  document.querySelector(".btn-main");
+      
+      // create a dom element
+      const createBtn = document.createElement("button");
+     
+
+      // I inject the dom element "create btn" inside the divBtn
+      createBtn.innerHTML = answer.answers;
+
+      
+      createBtn.classList.add("btn-choice") 
+    
+      divBtn.appendChild(createBtn);
+
+    });
+
 
 }
 
 
+const response=[...dataQuizz];
+
+
 console.log(displayQuizz());
+
+
+
+
+// each time the answer is correct add 1, at the end of the game display the total 
 
     // each questions will be already write.
     // they will be inside an object,
     // each time a btn is clicked the questions should appear on the paragraph
 
-// Select every button, for every button attach an event handler that will look
-// if the current button is the correct answer.
+    // Select every button, for every button attach an event handler that will look
+    // if the current button is the correct answer.
+
+    // when there is no more questions display the result. 
+    // At the end display the nunmber of correct answers
+    // count the number of correct answer.
+    // every time an answer is true we will add 1 in order to have the result.
 
 
+    // I will take all the good answers and return a number of the size of the answers
+    // if the number of good answers are equal to 5 return "shabala wub dub dub, you are an expert" else "meh, you are not ready to squash yet"
+
+// function gameOver(){
+
+//     function result (){
+//         total=0;
+//         i=0;
+
+//    if (dataQuizz[i].result[index] === true){
+//        return total++}
+// ou
+//         while (dataQuizz[i].result[index]  === true){
+//             return total ++
+//         }
+
+//   ou     
+  
+//   for (total =0; dataQuizz[i].result[index]  === true; total++);
+//     };
+
+
+//     console.log(result);
+
+    
+
+//     const total = dataQuizz.length >= 5;
+
+//     if (total === 5){
+//         return 'your result is : ${}, Shabala wub dub dub, you are an expert'
+//     } else { 
+//         return 'your result is : ${}, Meh, you are not ready to squash yet'
+//     }
+// };
 
 //displayQuizz(quizzIndex)
 
@@ -108,22 +180,4 @@ console.log(displayQuizz());
 // I need to select what's inside class main in order to input the values of my variables.
 
 
-
-// when there is no more questions display the result. <
-
-function gameOver(){
-    dataQuizz.length >= 5
-};
-
-
-// At the end display the nunmber of correct answers
-// count the number of correct answer.
-// every time an answer is true we will add 1 in order to have the result.
-
-
-// I will take all the good answers and return a number of the size of the answers
-// if the number of good answers are equal to 5 return "shabala wub dub dub, you are an expert" else "meh, you are not ready to squash yet"
-//
-//
-//
 // each time a button is clicked it should display a new array of data
