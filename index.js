@@ -30,6 +30,21 @@ const dataQuizz = [
     answers: ["Summer and Dylan", "Ben and Jerry", "Beth and Jerry"],
     result: "Beth and Jerry",
   },
+  {
+    question: "What color is mister Meeseeks?",
+    answers: ["Green", "Blue", "Purple"],
+    result: "Blue",
+  },
+  {
+    question: "What is Beth profession?",
+    answers: ["Veterinarian", "Teacher", "Dentist"],
+    result: "Veterinarian",
+  },
+  {
+    question: "How many kid Morty have?",
+    answers: ["0", "1", "Does he have a kid !?"],
+    result: "1",
+  },
 ];
 
 
@@ -103,7 +118,7 @@ console.log(total);
 
   function gameOver(){
 
-    let name = prompt("What's your name ?");
+    let name = prompt("What's your name again?");
 
     const endGame = document.querySelector(".remove-at-the-end")
     endGame.innerHTML = " "
@@ -129,7 +144,7 @@ console.log(total);
 
 
     if (total === dataQuizz.length ){
-      resultWindow.innerHTML= `your result is : ${total}, Shhabala wub dub dub, you are an expert`;
+      resultWindow.innerHTML= `your result is : ${total}, Wubba lubba dub dub, you are an expert`;
       
     } else {
       resultWindow.innerHTML=`your result is : ${total}, Meh, you are not ready to squwash yet`;
