@@ -3,7 +3,6 @@
 
 Creation of quizz about Rick and Morty cartoon.
 
-8 questions, 3 possibilities.
 
 Sources : 
 
