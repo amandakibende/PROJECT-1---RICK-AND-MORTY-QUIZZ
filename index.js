@@ -1,12 +1,14 @@
 const btn = document.querySelectorAll(".btn-choice");
+const resultWindow=document.getElementById('end-sentence');
 const quizzIndex = 0;
+const total = 0; 
+
 
 const dataQuizz = [
   {
-    question:
-      "In what food Rick transform himself to escape the family therapy session ?",
+    question:"In what food Rick transform himself to escape the family therapy session ?",
     answers: ["Carrot", "Apple", "Pickle"],
-    result: 2,
+    result: "Pickle",
   },
   {
     question: "How many grand kids Rick have ?",
@@ -16,25 +18,29 @@ const dataQuizz = [
   {
     question: "Who is Morty high school crush ?",
     answers: ["Jessica", "Lina ", "Emily"],
-    result: 0,
+    result: "Jessica",
   },
   {
     question: "What is Rick lastname ?",
     answers: ["Bond", "Sanchez", "Smith"],
-    result: 1,
+    result: "Sanchez",
   },
   {
     question: "Who are Morty's parents?",
     answers: ["Summer and Dylan", "Ben and Jerry", "Beth and Jerry"],
-    result: 2,
+    result: "Beth and Jerry",
   },
 ];
+
+// let sum=0;
+// for (i=0; i <dataQuizz.length.answers; sum ++);
+console.log(dataQuizz.length[""]);
 
 
 function displayQuizz(quizzIndex) {
 
   const currentQuestion = dataQuizz[quizzIndex];
-  const total = 0; 
+  
 
   // Display the current question n° on the page  (you can use the quizzIndex);
 
@@ -62,18 +68,21 @@ function displayQuizz(quizzIndex) {
     createBtn.innerHTML = answer;
     createBtn.classList.add("btn-choice");
     divBtn.appendChild(createBtn);
+    
   });
+  
 
 // each time a button is pressed it add 1 index to my displayQuizz
    const btnClick = document.querySelectorAll(".btn-choice").forEach(button=> {
     button.addEventListener("click", function(){
 
 
-        // for (total = 0; currentQuestion.result === true; total++); {
-        //     const result = document.querySelector(".total")
-        //     result.innerHTML =  total; 
-        // }
-    
+
+      if (currentQuestion.answers === currentQuestion.result){
+        total ++;
+
+        document.querySelector("#end-sentence").hidden = total;
+      }
 
         nextQuest();
 
@@ -95,26 +104,27 @@ function displayQuizz(quizzIndex) {
 
   function gameOver(){
 
-    
+    let name = prompt("What's your name ?");
 
     const endGame = document.querySelector(".remove-at-the-end")
     endGame.innerHTML = " "
 
 
     const titleOver = document.querySelector(".title")
-    titleOver.innerHTML = "GAME OVER GLIP GLOPS !"
+    titleOver.innerHTML = "GAME OVER " + name + "!"; 
 
+    // const total = document.querySelector(".total")
 
-    // if (total === dataQuizz.length ){
-    //     return 'your result is : ${total}, Shabala wub dub dub, you are an expert'
-    // } else {
-    //     return 'your result is : ${total}, Meh, you are not ready to squash yet'
-    // }
+    if (total === dataQuizz.length ){
+      resultWindow.innerHTML= `your result is : ${total}, Shabala wub dub dub, you are an expert`;
+      
+    } else {
+      resultWindow.innerHTML=`your result is : ${total}, Meh, you are not ready to squash yet`;
+    }
 
 
  };
 
- 
 
 
 }
@@ -122,36 +132,6 @@ function displayQuizz(quizzIndex) {
 
 
 displayQuizz(0);
-
-// function gameOver(){
-
-//     function result (){
-//         total=0;
-//         i=0;
-
-// //    if (dataQuizz[i].result[index] === true){
-// //        return total++}
-// // ou
-// //         while (dataQuizz[i].result[index]  === true){
-// //             return total ++
-// //         }
-
-// //   ou
-
-  
-
-//     console.log(result);
-
-//     const total = dataQuizz.length >= 5;
-
-//     if (total === dataQuizz.length ){
-//         return 'your result is : ${total}, Shabala wub dub dub, you are an expert'
-//     } else {
-//         return 'your result is : ${total}, Meh, you are not ready to squash yet'
-//     }
-// };
-
-
 
 
 
