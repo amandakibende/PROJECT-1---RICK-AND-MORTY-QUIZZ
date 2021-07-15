@@ -3,6 +3,11 @@
 
 Creation of quizz about Rick and Morty cartoon.
 
-5 questions, 15 choices.
+8 questions, 3 possibilities.
+
+Sources : 
+
+Running cartoon img : https://www.pngarea.com/view/e7a68c78_rick-and-morty-png-rick-and-morty-running/
+GitHub icon : https://icones8.fr/icons/set/github
 
 
