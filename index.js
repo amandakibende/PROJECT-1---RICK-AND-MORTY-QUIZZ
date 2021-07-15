@@ -1,7 +1,7 @@
 const btn = document.querySelectorAll(".btn-choice");
 const resultWindow=document.getElementById('end-sentence');
 const quizzIndex = 0;
-const total = 0; 
+let total = 0; 
 
 
 const dataQuizz = [
@@ -13,7 +13,7 @@ const dataQuizz = [
   {
     question: "How many grand kids Rick have ?",
     answers: [3, 4, 2],
-    result: 2,
+    result: "2",
   },
   {
     question: "Who is Morty high school crush ?",
@@ -32,12 +32,10 @@ const dataQuizz = [
   },
 ];
 
-// let sum=0;
-// for (i=0; i <dataQuizz.length.answers; sum ++);
-console.log(dataQuizz.length[""]);
 
 
 function displayQuizz(quizzIndex) {
+console.log(total);
 
   const currentQuestion = dataQuizz[quizzIndex];
   
@@ -74,14 +72,15 @@ function displayQuizz(quizzIndex) {
 
 // each time a button is pressed it add 1 index to my displayQuizz
    const btnClick = document.querySelectorAll(".btn-choice").forEach(button=> {
-    button.addEventListener("click", function(){
+    button.addEventListener("click", function(event){
+
+      const answer = event.target.textContent;
 
 
+      if (answer === currentQuestion.result){
+        total +=1;
 
-      if (currentQuestion.answers === currentQuestion.result){
-        total ++;
-
-        document.querySelector("#end-sentence").hidden = total;
+     
       }
 
         nextQuest();
@@ -113,22 +112,34 @@ function displayQuizz(quizzIndex) {
     const titleOver = document.querySelector(".title")
     titleOver.innerHTML = "GAME OVER " + name + "!"; 
 
-    // const total = document.querySelector(".total")
+
+//create a btn element into my div result
+    const resultDiv = document.getElementById("result")
+    const resetBtn = document.createElement("button")
+    resetBtn.innerHTML = "Reset Game"
+    resetBtn.classList.add("reset-btn")
+    resultDiv.appendChild(resetBtn)
+
+//  when click reload the page 
+    resetBtn.onclick = () => resetGame();
+
+    function resetGame(){
+      window.location.reload();
+  }
+
 
     if (total === dataQuizz.length ){
-      resultWindow.innerHTML= `your result is : ${total}, Shabala wub dub dub, you are an expert`;
+      resultWindow.innerHTML= `your result is : ${total}, Shhabala wub dub dub, you are an expert`;
       
     } else {
-      resultWindow.innerHTML=`your result is : ${total}, Meh, you are not ready to squash yet`;
+      resultWindow.innerHTML=`your result is : ${total}, Meh, you are not ready to squwash yet`;
     }
 
 
  };
-
-
+ 
 
 }
-
 
 
 displayQuizz(0);
